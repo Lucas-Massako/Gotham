@@ -1,0 +1,127 @@
+/* reset CSS 
+16px * 62.5%= 10 000 rem
+*/
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&display=swap');
+html{
+    font-size: 62.5%;
+    background: url(../asset/cover-batman.jpg) center center fixed;
+    scroll-behavior: smooth;
+    background:linear-gradient( to top, rgba(0,0,0,0.6) 50%, rgba(0,0,0,0.6) 50%), 
+    url(../asset/cover-batman.jpg)no-repeat fixed center center / cover;
+}
+body{
+    font: 1.6rem "Montserrat", sans-serif;
+    margin: 0;
+   
+}
+h1,h2,h3,h4,h5,h6,p
+ol,ul,p,figure{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+*{
+    box-sizing: border-box;
+}
+/* inline element  */
+
+a{
+    text-decoration: none;
+    color: #333;
+}
+img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    vertical-align: middle;
+    object-fit: cover;
+}
+/* theme css */
+*{
+    /* ff */
+    scrollbar-width: thin;
+    scrollbar-color: #000 #fff;
+   
+}
+/* webkit */
+*::-webkit-scrollbar{
+    width: .2rem;
+}
+:root{
+    --primary-color: rgb(218, 213, 213) ;
+    --secondary-color: #ADA9A9;
+    --main-color: rgba(255, 255, 255,.9);
+    --alterne-color: rgb(48, 47, 47);
+    --header-tittle:#fafafafa;
+}
+header,main{
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: var(--main-color);
+}
+header{
+    margin-top: 3rem;
+}
+header h1{
+    font-weight: 400; /* lighter bolder*/
+    text-transform: capitalize;
+    font-size: 5rem;
+    
+}
+header h1::before{
+    content: "\01F3AC";
+    vertical-align: .2rem;
+}
+/*header h1::after{
+    content: "\01F3AC";
+    vertical-align: 0rem;
+}*/
+nav h2, section h2{
+    /* add position Sticky */
+    position: sticky;
+    top: 0;
+    left: 0;
+    text-transform: capitalize;
+    background-color: var(--header-tittle);
+    line-height: 6.5rem;
+    padding: .5rem;
+    box-shadow: 0 .4rem 0 var(--secondary-color);
+    font-weight: 300;
+}
+
+nav ol{
+    padding-left: 3rem;
+    list-style-type: decimal;
+    margin: 1rem 0;
+    line-height: 3.5rem;
+    text-transform: uppercase;
+}
+section p{
+    margin:1rem 0;
+}
+section > .section-page{ /* H2 est optionel sa marche sans */
+    /* propriétté a ajouter */ 
+    transition: all .8s .5s ease-in-out; /*  visée ( bg color.juste transition etc ici on choisi all.  vitesse , délai*/ 
+    background-origin: center;
+}
+section > .section-page:target{
+    background-color: var(--alterne-color);
+    color:#fafafa;
+}
+footer > p img{
+    width: inherit;
+}
+/* responsive mobile */
+/* selecteur speciaux qui discute avec les média données ! ne pas oublier le viewport dans le head! */ 
+@media screen and (max-width: 90rem){
+    body{
+        filter: grayscale(100%);
+    }
+    header{ 
+        margin-top: 0;
+    }
+    header h1{
+        font-size: 3rem;
+    }
+}
